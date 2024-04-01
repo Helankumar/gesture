@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+// Function to encode a message into gestures
+void encode(char message[]) {
+    int len = strlen(message);
+    for (int i = 0; i < len; i++) {
+        printf("Perform gesture for '%c'\n", message[i]);
+    }
+}
+
+// Function to decode gestures into a message
+void decode(char gestures[]) {
+    int len = strlen(gestures);
+    printf("Decoded message: ");
+    for (int i = 0; i < len; i++) {
+        printf("%c", gestures[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    char message[] = "HELLO";
+    printf("Original message: %s\n", message);
+
+    // Encoding the message into gestures
+    printf("Performing gestures to encode the message...\n");
+    encode(message);
+
+    // Simulating receiving gestures and decoding
+    char received_gestures[] = "Gesture for 'H' Gesture for 'E' Gesture for 'L' Gesture for 'L' Gesture for 'O'";
+    printf("Received gestures: %s\n", received_gestures);
+    printf("Decoding gestures...\n");
+    decode(received_gestures);
+
+    return 0;
+}
